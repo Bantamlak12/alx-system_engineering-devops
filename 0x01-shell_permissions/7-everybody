@@ -1,2 +1,2 @@
 #1/bin/bash
-chmod a+x hello
+chmod 711 hello
