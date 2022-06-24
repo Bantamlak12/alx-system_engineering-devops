@@ -16,4 +16,4 @@ A readme file that describes what each script is all about
 # 100-change_owner_and_group:chmod --from=root:root vincent:staff ./* - A script that changes the owner to vincent and the group owner to staff for all the files and directories in the working directory.
 # 101-symbolic_link_permissions: chown -h vincent:staff _hello
 # 102-if_only: chmod --from=guillaume betty hello - A script that changes the owner of the file hello to betty only if it is owned by the user guillaume.
-#103-Star_Wars: telnet towel.blinkenlights.nl - A script that will play the StarWars IV episode in the terminal. 
+# 103-Star_Wars: telnet towel.blinkenlights.nl - A script that will play the StarWars IV episode in the terminal. 
