@@ -1,2 +1,2 @@
 #!/bin/bash
-echo Reverse | awk
+echo Reverse | perl -ne 'chomp;
