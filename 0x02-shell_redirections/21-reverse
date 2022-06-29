@@ -1,2 +1,2 @@
 #!/bin/bash
-echo Reverse | perl -ne 'chomp;
+echo Reverse | rev Reverse
