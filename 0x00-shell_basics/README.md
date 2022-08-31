@@ -1,1 +1,1 @@
-# This directory contains projects
+# This directory contains shell projects
