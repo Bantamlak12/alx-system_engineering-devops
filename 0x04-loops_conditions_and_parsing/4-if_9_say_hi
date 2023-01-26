@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# A Bash script that displays Best School 10 times, but Hi for the 9th iteration
+# A Bash script that displays Best School 10 times, but Hi for the 9th iteration.
 
 num=1
 
@@ -7,6 +7,7 @@ while [ $num -le 10 ]
 do
 	if [ $num == 9 ]
 	then
+		echo "Best School"
 		echo "Hi"
 	else
 		echo "Best School"
