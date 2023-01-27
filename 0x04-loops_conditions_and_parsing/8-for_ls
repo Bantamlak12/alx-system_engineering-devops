@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# A Bash script that displays the content of the current directory
+# in a list format.
+
+search_dir=$(ls /root/alx-system_engineering-devops/0x04-loops_conditions_and_parsing)
+
+for content in $search_dir
+do
+	echo "$content" | cut -d "-" -f2
+done
