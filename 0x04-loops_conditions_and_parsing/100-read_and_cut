@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# A bash script that display the content of the file `/etc/passwd`
+# should only display username, useer id, and home directory path for the user.
+
+# Read the content of /etc/passwd into an array
+while read line; do
+  # Extract the username, user id, and home directory path
+  username=$(echo "$line" | cut -d: -f1)
+  uid=$(echo "$line" | cut -d: -f3)
+  home=$(echo "$line" | cut -d: -f6)
+
+  # Display the extracted information
+  echo "$username:$uid:$home"
+done < /etc/passwd
