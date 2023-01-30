@@ -3,7 +3,7 @@
 # should only display username, useer id, and home directory path for the user.
 
 # Read the content of /etc/passwd into an array
-while read line; do
+while read -r line; do
   # Extract the username, user id, and home directory path
   username=$(echo "$line" | cut -d: -f1)
   uid=$(echo "$line" | cut -d: -f3)
