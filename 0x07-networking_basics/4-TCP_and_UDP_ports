@@ -3,4 +3,4 @@
 # It only shows listening sockets
 # It shows the PID and name of the program to which each socket belongs.
 
-sudo netstat -l -p
+netstat -l -p
