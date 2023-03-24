@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Configure a local SSH client's configuration file to connect to a server
+# without typing a password.
+
+Host Myserver
+		Hostname 3.84.238.227
+		user ubuntu
+		PasswordAuthentication no
+		IdentifyFile ~/.ssh/school
