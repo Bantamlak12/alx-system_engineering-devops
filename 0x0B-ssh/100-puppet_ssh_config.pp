@@ -6,5 +6,5 @@
 
 exec { 'ssh_config':
   path    => '/bin/',
-  command => 'echo "IdentifyFile ~/.ssh/school\nPasswordAuthentication no" >> /etc/ssh/ssh_config'
+  command => 'echo "PasswordAuthentication no\nIdentifyFile ~/.ssh/school" >> /etc/ssh/ssh_config'
 }
