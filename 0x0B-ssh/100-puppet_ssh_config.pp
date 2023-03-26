@@ -4,5 +4,7 @@
 
 # the `path` attribute in the following code looks for the path of the `echo` command.
 
-exec { 'echo "IdentifyFile ~/.ssh/school\nPasswordAuthentication no" >> /etc/ssh/ssh_config':  path => '/bin/'
+exec { 'ssh_config':
+  path    => '/bin/',
+  command => 'echo "IdentifyFile ~/.ssh/school\nPasswordAuthentication no" >> /etc/ssh/ssh_config'
 }
