@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Configure Nginx server so that /redirect_me is redirecting to another page.
+# The redirection must be a “301 Moved Permanently”
+
+sudo sed -i "/^server {/a \\
+			location /redirect_me { \\
+					return 301 'https://www.alxafrica.com/'; \\
+		}" /etc/nginx/sites-available/default
+
+sudo service nginx restart
