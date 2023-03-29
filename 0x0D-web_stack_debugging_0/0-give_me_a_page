@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# The server were not running
+
+sudo service apache2 start
