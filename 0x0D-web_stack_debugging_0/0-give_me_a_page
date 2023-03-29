@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # The server were not running
 
-docker exec 61d489306cc8 sudo service apache2 start
+docker exec 61d489306cc8 sudo service apache2 start > /dev/null 2>&1
 curl 0:8080
