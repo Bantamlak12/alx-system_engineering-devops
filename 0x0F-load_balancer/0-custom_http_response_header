@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Configure Nginx so that its HTTP response contains a custom header.
+
+sudo sed -i '/Default server configuration/a add_header X-Served-By "88037-web-01";' /etc/nginx/sites-available/default
+sudo service nginx restart
