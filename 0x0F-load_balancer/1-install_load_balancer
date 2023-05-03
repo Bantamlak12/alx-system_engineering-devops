@@ -15,7 +15,7 @@ frontend my_http_in
 backend my_http_backend
         mode    http
         balance roundrobin
-        server  88037-web-01 3.84.238.227:80 check
-        server  88037-web-02 100.25.151.112:80 check
+        server  88037-web-01 18.206.207.43:80 check
+        server  88037-web-02 100.26.50.89:80 check
 EOT'
 sudo service haproxy restart
