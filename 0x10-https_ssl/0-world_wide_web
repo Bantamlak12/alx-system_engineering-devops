@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Displays information about subdomains
+
+domain="$1"
+subdomain="$2"
+
+func ()
+{
+	# Check if the subdomain is not given or empty, and if not
+	# it asigns a new one
+	if [ -z "$subdomain" ]; then
+		subdomain=("www" "lb-01" "web-01" "web-02")
+	fi
+
+	# Gets every record and IP for each subdomains
+	for sub in "${subdomain[@]}"; do
+		record=$(dig "$sub.$domain" | awk '/ANSWER SECTION:/ { getline; print $4 }')
+		IP=$(dig "$sub.$domain" | awk '/ANSWER SECTION:/ { getline; print $5 }')
+
+		echo "The subdomain $sub is a $record record and points to $IP"
+	done
+}
+func "$domain"
