@@ -3,11 +3,9 @@
 
 # Find user and all after it and replace with user nginx
 sudo sed -i 's/^user.*/user nginx;/g' /etc/nginx/nginx.conf
-# Find http and append the server block
-sudo sed -i "/^http {/a\\
-	server {\\
-		listen 8080 default_server;\\
-		listen [::]:8080 default_server;\\
-	}" /etc/nginx/nginx.conf
+# Insert the lines after the line `listen [::]:80 default_server;`
+sudo sed -i "/listen \[::\]:80 default_server;/a\\
+        listen 8080 default_server;\\
+        listen [::]:8080 default_server;" /etc/nginx/sites-available/default
 # Restart the nginx service
 sudo service nginx restart
