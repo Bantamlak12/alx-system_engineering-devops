@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Run the whoami command under the user passed as an argument
 
-if [ -z $1 ]; then
+if [ -z "$1" ]; then
 	whoami
 else
 	id -un "$1"
