@@ -7,5 +7,10 @@ sudo sed -i 's/^user.*/user nginx;/g' /etc/nginx/nginx.conf
 sudo sed -i "/listen \[::\]:80 default_server;/a\\
         listen 8080 default_server;\\
         listen [::]:8080 default_server;" /etc/nginx/sites-available/default
+# Give ownership and permission to nginx directories
+chown -R nginx:nginx /etc/nginx
+chown -R nginx:nginx /var/www/html
+chown -R nginx:nginx /var/lib/nginx
+chown -R nginx:nginx /var/log/nginx
 # Restart the nginx service
 sudo service nginx restart
