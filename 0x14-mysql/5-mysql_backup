@@ -7,13 +7,12 @@ if [ -n "$1" ]; then
 	passwd="$1"
 	# Store the current date
 	date=$(date +"%d-%m-%Y")
-
 	# MySQL dump must be name backup.sql
 	backup="backup.sql"
 	# The above dump file has to be compresssed to a tar.gz archive
-	archive="${date}.tar.gz"
+	archive="$date.tar.gz"
 	# Create the MySQL dump
-	mysqldump -u root -p"$passwd" --all-databases > $"backup"
+	mysqldump -u root -p"$passwd" --all-databases > "$backup"
 	# Create the archive file
 	tar -cvzf "$archive" "$backup"
 fi
