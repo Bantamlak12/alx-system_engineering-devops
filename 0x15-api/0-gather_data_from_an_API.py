@@ -10,14 +10,13 @@ if __name__ == "__main__":
     # Get employee id from command line
     employee_id = sys.argv[1]
 
-
     # Get information about the employee
     response = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                             .format(employee_id))
     employee_name = response.json().get('name')
 
     # Get information about the employee todo list
-    r = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
+    r = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos"
                      .format(employee_id))
     todo_list = r.json()
 
