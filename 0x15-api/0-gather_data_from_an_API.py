@@ -10,18 +10,16 @@ if __name__ == "__main__":
     # Get employee id from command line
     employee_id = sys.argv[1]
 
+
     # Get information about the employee
     response = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                             .format(employee_id))
-    if response.status_code == 200:
-        employee_data = response.json()
-        employee_name = employee_data['name']
+    employee_name = response.json().get('name')
 
     # Get information about the employee todo list
     r = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
                      .format(employee_id))
-    if r.status_code == 200:
-        todo_list = r.json()
+    todo_list = r.json()
 
     # Get number of total tasks
     total_tasks = len(todo_list)
@@ -35,7 +33,7 @@ if __name__ == "__main__":
     total_completed_tasks = len(completed_tasks)
 
     # Print out his/her todo list progress
-    print("Employee {} is done with tasks({}/{})"
+    print("Employee {} is done with tasks({}/{}):"
           .format(employee_name, total_completed_tasks, total_tasks))
     for task in completed_tasks:
         print("\t {}".format(task.get('title')))
