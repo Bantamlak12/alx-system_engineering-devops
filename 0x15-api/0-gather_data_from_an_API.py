@@ -6,19 +6,20 @@
 import requests
 import sys
 
+
 if __name__ == "__main__":
     # Get employee id from command line
     employee_id = sys.argv[1]
 
+    url = "https://jsonplaceholder.typicode.com/users/{}".format(employee_id)
+
     # Get information about the employee
-    response = requests.get("https://jsonplaceholder.typicode.com/users/{}"
-                            .format(employee_id))
+    response = requests.get(url)
     employee_name = response.json().get('name')
 
     # Get information about the employee todo list
-    r = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos"
-                     .format(employee_id))
-    todo_list = r.json()
+    response = requests.get("{}/todos".format(url))
+    todo_list = response.json()
 
     # Get number of total tasks
     total_tasks = len(todo_list)
