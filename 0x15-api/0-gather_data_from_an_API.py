@@ -27,7 +27,7 @@ if __name__ == "__main__":
     # Get list of completed tasks
     completed_tasks = []
     for task in todo_list:
-        if task['completed']:
+        if task.get('completed') is True:
             completed_tasks.append(task)
     # Get number of completed tasks
     total_completed_tasks = len(completed_tasks)
