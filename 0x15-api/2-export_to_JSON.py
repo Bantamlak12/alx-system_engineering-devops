@@ -25,8 +25,7 @@ if __name__ == "__main__":
                 "completed": t.get('completed'),
                 "username": username
         }
-
-    data.get(user_id).append(user_data)
+        data.get(user_id).append(user_data)
 
     with open(filename, "w") as json_file:
         json.dump(data, json_file)
