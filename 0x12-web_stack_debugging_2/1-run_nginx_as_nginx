@@ -9,4 +9,5 @@ sudo apt-get install lsof
 output=$(sudo lsof -i :8080)
 pid=$(echo "$output" | awk 'NR==2 {print $2}')
 sudo kill "$pid"
-sudo service nginx restart
+chmod 644 /etc/nginx/nginx.conf
+sudo -u nginx service nginx start
