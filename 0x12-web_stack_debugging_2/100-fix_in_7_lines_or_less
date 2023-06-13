@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Within 7 line or less, make task #1 short and sweet
+sudo sed -i 's/#user.*/user nginx;/g' /etc/nginx/nginx.conf
+sudo sed -i 's/80/8080/g' /etc/nginx/sites-available/default
+chmod 644 /etc/nginx/nginx.conf
+pkill apache2
+sudo -u nginx service nginx start
