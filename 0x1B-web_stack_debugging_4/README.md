@@ -70,4 +70,6 @@ root@0a62aa706eb3:/#
 
 [How to use ApacheBench for web server performance testing](https://www.datadoghq.com/blog/apachebench/)
 
--   `0-the_sky_is_the_limit_not.pp`: substitutes the wrong root path with the right one.
+-   [0-the_sky_is_the_limit_not.pp](https://github.com/Bantamlak12/alx-system_engineering-devops/blob/master/0x1B-web_stack_debugging_4/0-the_sky_is_the_limit_not.pp): Substitutes the wrong root path with the right one.
+
+-   [1-user_limit.pp](https://github.com/Bantamlak12/alx-system_engineering-devops/blob/master/0x1B-web_stack_debugging_4/1-user_limit.pp): Changes the OS configuration so that it is possible to login with the `holberton` user and open a file without any error message.
