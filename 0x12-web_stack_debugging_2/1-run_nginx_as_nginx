@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 # Run Nginx as nginx user, and nginx must be listening on all active IPs on port 8080
 
-# Find user and all after it and replace with user nginx
-sudo sed -i 's/^user.*/user nginx;/g' /etc/nginx/nginx.conf
-# Substitute the 80 with 8080
-sudo sed -i "s/80/8080/g" /etc/nginx/sites-available/default
-# Restart the nginx service
+sudo sed -i 's/^#user.*/user nginx;/g' /etc/nginx/nginx.conf
+sudo sed -i 's/listen 80/listen 8080/g' /etc/nginx/sites-available/default
+sudo sed -i 's/listen \[::\]:80/listen \[::\]:8080/g' /etc/nginx/sites-available/default
+sudo apt-get update
+sudo apt-get install lsof
+output=$(sudo lsof -i :8080)
+pid=$(echo "$output" | awk 'NR==2 {print $2}')
+sudo kill "$pid"
 sudo service nginx restart
