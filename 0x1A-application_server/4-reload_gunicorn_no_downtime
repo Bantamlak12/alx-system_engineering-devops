@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
 # No service interruption
 
-pid=$(pgrep gunicorn)
-
-if [[ -z "$pid" ]]; then
-        echo "Gunicorn is not running"
-        exit 0
-fi
-
-echo "$pid" | xargs kill -HUP
-echo "Gunicorn reloaded gracefully!"
+ps aux | pgrep gunicorn | xargs kill -HUP
