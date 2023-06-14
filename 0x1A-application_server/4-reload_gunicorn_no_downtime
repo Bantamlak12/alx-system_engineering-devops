@@ -5,8 +5,8 @@ pid=$(pgrep gunicorn)
 
 if [[ -z "$pid" ]]; then
         echo "Gunicorn is not running"
-        exit 1
+        exit 0
 fi
 
-kill -HUP "$pid"
-echo "Gunicorn reloaded gracefully"
+echo "$pid" | xargs kill -HUP
+echo "Gunicorn reloaded gracefully!"
