@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# No service interruption
+
+pid=$(pgrep gunicorn)
+
+if [[ -z $pid ]]; then
+        echo "Gnnicorn is not running"
+        exit 1
+fi
+
+kill -HUP $pid
+echo "Gunicorn reloaded gracefully"

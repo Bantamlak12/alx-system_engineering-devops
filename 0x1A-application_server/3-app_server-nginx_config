@@ -1,0 +1,39 @@
+# Customized header response
+add_header X-Served-By '88037-web-01';
+
+server {
+        # Serve /hbnb_static
+        location /hbnb_static {
+        alias /data/web_static/current/;
+        }
+
+        location /redirect_me {
+        return 301 "https://www.alxafrica.com/";
+        }
+
+        error_page 404 /custom_404.html;
+        location = /custom_404.html {
+                root /var/www/html;
+                internal;
+        }
+
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+
+        root /var/www/html;
+
+        # Server's IP address
+        server_name 18.206.207.43;
+
+        # Serve /airbnb-onepage/ from Airbnb_clone_v2
+        location = /airbnb-onepage/ {
+                proxy_pass http://127.0.0.1:5000;
+
+        }
+
+        # Serve /airbnb-dynamic/number_odd_or_even/(any integer) on port 5001
+        location /airbnb-dynamic/number_odd_or_even/ {
+                proxy_pass http://127.0.0.1:5001/number_odd_or_even/;
+        }
+}
