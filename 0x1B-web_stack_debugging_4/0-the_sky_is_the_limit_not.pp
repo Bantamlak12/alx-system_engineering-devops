@@ -5,6 +5,7 @@ exec {'increase_the_limit':
   path    => '/usr/local/bin/:/bin',
 } ->
 
+# Restarting nginx
 exec {'nginx_restart':
   command => '/etc/init.d/nginx restart',
   path    => '/bin',
