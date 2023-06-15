@@ -2,7 +2,7 @@
 
 exec {'increase_the_limit':
   command => 'sed -i "s/15/4096/" /etc/default/nginx',
-  path    => '/bin',
+  path    => '/usr/local/bin/:/bin',
 } ->
 
 exec {'nginx_restart':
