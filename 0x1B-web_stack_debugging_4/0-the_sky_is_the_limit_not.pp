@@ -7,5 +7,5 @@ exec {'Substitute root path':
 
 exec {'nginx restart':
   command => 'sudo service nginx restart',
-  path    => '/usr/bin',
+  path    => '/usr/bin:/usr/sbin',
 }
