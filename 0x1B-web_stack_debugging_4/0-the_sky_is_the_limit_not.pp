@@ -6,6 +6,6 @@ exec {'increase_the_limit':
 } ->
 
 exec {'nginx_restart':
-  command => 'sudo service nginx restart',
+  command => 'service nginx restart',
   path    => '/usr/bin:/usr/sbin',
 }
